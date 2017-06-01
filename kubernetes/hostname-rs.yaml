@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: hostname
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: hostname
+    spec:
+      containers:
+        - name: hostname
+          image: oguzpastirmaci/hostname
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
